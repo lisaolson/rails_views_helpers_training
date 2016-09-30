@@ -33,12 +33,17 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
-            <li><a href="/recipes/new">+ New Recipe</a></li>
-            <li><a href="/users/<%= current_user.id %>">Profile</a></li>
-            <li><a href="/logout">Log Out</a></li>
+            <!-- <li><a href="/recipes/new">+ New Recipe</a></li> -->
+            <li><% link_to "New Recipe", /recipes/new(@recipe)%></li>
+            <!-- <li><a href="/users/<%= current_user.id %>">Profile</a></li> -->
+            <li><% link_to "Profile", /users/current_user.id(@profile)%></li>
+            <!-- <li><a href="/logout">Log Out</a></li> -->
+            <li><% link_to "Log Out", /logout(@logout)%></li>
           <% else %>
-            <li><a href="/signup">Sign Up</a></li>
-            <li><a href="/login">Log In</a></li>
+            <!-- <li><a href="/signup">Sign Up</a></li> -->
+            <li><% link_to "Sign Up", /signup(@signup)%></li>
+            <!-- <li><a href="/login">Log In</a></li> -->
+            <li><% "Log In", /login(@login)%></li>
           <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
