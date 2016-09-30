@@ -15,6 +15,9 @@
 </form> -->
 
 <h1>Edit Recipe</h1>
+
+<%= render 'form' %>
+
 <hr>
 <%= form_for @recipe, url: {action: "create"}, html: {"/recipes/2"} do |f| %>
 <p>
